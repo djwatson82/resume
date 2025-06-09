@@ -1,0 +1,77 @@
+.upgradePanel {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.upgradePanel h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.upgradeList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.upgradeItem {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.upgradeItem:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.upgradeInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.upgradeInfo h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.upgradeInfo p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.upgradeLevel {
+  font-size: 0.9rem;
+  color: #4a90e2;
+}
+
+.purchaseButton {
+  align-self: center;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  border: none;
+  border-radius: 0.25rem;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.purchaseButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.purchaseButton:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.3);
+  cursor: not-allowed;
+} 

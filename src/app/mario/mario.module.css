@@ -1,0 +1,19 @@
+.mario {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  background-image: url('/mario-sprite.png');
+  background-size: 128px 32px;
+  transition: transform 0.1s;
+  z-index: 2;
+}
+
+.mario.damaged {
+  animation: damage 0.2s infinite;
+  filter: brightness(1.5);
+}
+
+@keyframes damage {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+} 

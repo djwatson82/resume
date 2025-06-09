@@ -1,0 +1,301 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.startScreen, .gameOver {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 1rem;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.startScreen h1, .gameOver h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #FFD700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.startScreen p, .gameOver p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.gameOver button {
+  background: #FFD700;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.gameOver button:hover {
+  transform: scale(1.1);
+}
+
+.mario {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  background-image: url('/mario-sprite.png');
+  background-size: 128px 32px;
+  transition: transform 0.1s;
+  z-index: 2;
+}
+
+.mario.super {
+  width: 48px;
+  height: 48px;
+  background-image: url('/mario-super.png');
+  background-size: 192px 48px;
+}
+
+.mario.invincible {
+  animation: invincible 0.5s infinite;
+}
+
+.mario.right {
+  transform: scaleX(1);
+}
+
+.mario.left {
+  transform: scaleX(-1);
+}
+
+.mario.jumping {
+  background-position: 0 -32px;
+}
+
+.mario.moving {
+  animation: run 0.2s infinite steps(4);
+}
+
+.mario.super.moving {
+  animation: runSuper 0.2s infinite steps(4);
+}
+
+.platform {
+  position: absolute;
+  height: 16px;
+  background: #8B4513;
+  border: 2px solid #654321;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.enemy {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  background-image: url('/goomba.png');
+  background-size: 64px 32px;
+  z-index: 1;
+}
+
+.enemy.right {
+  animation: enemyMove 0.5s infinite steps(2);
+}
+
+.enemy.left {
+  animation: enemyMove 0.5s infinite steps(2) reverse;
+}
+
+.coin {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  background-image: url('/coin.png');
+  background-size: 96px 24px;
+  animation: coinSpin 0.5s infinite steps(4);
+  z-index: 1;
+}
+
+.powerUp {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  z-index: 1;
+}
+
+.powerUp.mushroom {
+  background-image: url('/mushroom.png');
+  background-size: 32px 32px;
+  animation: bounce 1s infinite;
+}
+
+.powerUp.star {
+  background-image: url('/star.png');
+  background-size: 32px 32px;
+  animation: spin 1s infinite linear;
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: #8B4513;
+  border-top: 4px solid #654321;
+}
+
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/clouds.png');
+  background-size: 200px 100px;
+  opacity: 0.5;
+  animation: cloudMove 20s linear infinite;
+}
+
+.score, .lives {
+  position: absolute;
+  top: 20px;
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+.score {
+  left: 20px;
+}
+
+.lives {
+  right: 20px;
+}
+
+.instructions {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+  z-index: 3;
+}
+
+.chat {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  padding: 10px;
+  color: white;
+  z-index: 3;
+}
+
+.chatHeader {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.chatHeader h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #FFD700;
+}
+
+.chatMessages {
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #FFD700 rgba(255, 255, 255, 0.2);
+}
+
+.chatMessages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chatMessages::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.chatMessages::-webkit-scrollbar-thumb {
+  background: #FFD700;
+  border-radius: 3px;
+}
+
+.chatMessage {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.username {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.message {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes run {
+  0% { background-position: 0 0; }
+  100% { background-position: -128px 0; }
+}
+
+@keyframes runSuper {
+  0% { background-position: 0 0; }
+  100% { background-position: -192px 0; }
+}
+
+@keyframes jump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes coinSpin {
+  0% { background-position: 0 0; }
+  100% { background-position: -96px 0; }
+}
+
+@keyframes enemyMove {
+  0% { background-position: 0 0; }
+  100% { background-position: -64px 0; }
+}
+
+@keyframes cloudMove {
+  from { background-position: 0 0; }
+  to { background-position: 200px 0; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes invincible {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+} 

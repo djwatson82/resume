@@ -1,0 +1,60 @@
+.resourceDisplay {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.resourceDisplay h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.resourceList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.resourceItem {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.resourceItem:hover {
+  transform: translateX(4px);
+}
+
+.resourceName {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.resourceAmount {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #4a90e2;
+  text-align: right;
+}
+
+.resourceRate {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.perSecond {
+  color: #4caf50;
+}
+
+.perClick {
+  color: #ff9800;
+} 

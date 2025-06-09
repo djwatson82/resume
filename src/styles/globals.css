@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 249, 250, 251;
+  --background-rgb: 31, 41, 55;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  min-height: 100vh;
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-accent/90;
+  }
+
+  .panel {
+    @apply bg-surface rounded-lg p-4 shadow-lg;
+  }
+
+  .input {
+    @apply bg-background border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+
+  .label {
+    @apply text-sm font-medium text-gray-300;
+  }
+} 
